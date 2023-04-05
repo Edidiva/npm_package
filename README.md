@@ -4,7 +4,7 @@ NO2
 Timers: In this phase, the event loop checks for any scheduled timer tasks that have reached their designated timeout value. If any such tasks are found, they are moved to the task queue for execution in the next phase.
 Pending, Idle, prepare: This phase is rarely used in practice, and is mainly reserved for internal use by the Node.js runtime.
 Poll: In this phase, the event loop waits for new I/O events or timer tasks to be added to the task queue. If any such events or tasks are found, they are processed immediately. If not, the event loop will wait until new events or tasks are added.                                                           
-Check: In this phase, the event loop executes any callbacks that were added to the task queue during the previous phases. This phase is typically used for handling callbacks related to the completion of I/O events.
+Check: In this phase, the event loop executes any callbacks that were added to the task queue during the previous phases. This phase is typically used for handling callbacks related to the completion of I/O events spefically where any setImmediate timers as part of the input/output are executed
 Close callbacks: In this final phase, the event loop executes any remaining close callbacks related to the closing of network connections or other resources.
 
 NO3
@@ -28,4 +28,3 @@ npm5 is a version of the npm (Node Package Manager) tool for managing packages i
 N06
 To run a script defined in the package.json file of your Node.js project, you can use the npm run command followed by the script name.
 
-NO7
